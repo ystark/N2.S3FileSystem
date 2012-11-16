@@ -5,7 +5,7 @@
     <version>1.0.4703.27575</version>
     <authors>dcowart</authors>
     <owners>dcowart</owners>
-    <!--<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>-->
+    <projectUrl>https://github.com/Intermark/N2.S3FileSystem</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Adds an S3-based IFileSystem provider to N2CMS</description>
     <releaseNotes>Initial release</releaseNotes>
