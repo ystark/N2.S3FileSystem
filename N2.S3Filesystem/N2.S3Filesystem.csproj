@@ -14,9 +14,9 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <NugetExecutable>$(SolutionDir)\.nuget\nuget.exe</NugetExecutable>
-    <NuspecFile>$(SolutionDir)\.nuspec\N2.S3FileSystem.nuspec</NuspecFile>
-    <MSBuildCommunityTasksPath>$(SolutionDir)\Build</MSBuildCommunityTasksPath>
+    <NugetExecutable>$(SolutionDir).nuget\nuget.exe</NugetExecutable>
+    <NuspecFile>$(SolutionDir).nuspec\N2.S3FileSystem.nuspec</NuspecFile>
+    <MSBuildCommunityTasksPath>$(SolutionDir)Build</MSBuildCommunityTasksPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,15 +78,15 @@
     <MSBuild Project="$(SolutionFile)" Properties="Configuration=Release" />
   </Target>-->
   <Target Name="AfterBuild">
-    <!-- You could use the MSBuild Copy task here to move the compiled code into
-       a structure that fits your desired package format -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutputPath)\$(AssemblyName).dll">
+      <Output TaskParameter="Assemblies" ItemName="AssemblyIdentities"/>
+    </GetAssemblyIdentity>
     <XmlUpdate
       Prefix="nu"
       Namespace="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd"
       XmlFileName="$(NuspecFile)"
       XPath="package/nu:metadata/nu:version"
-      Value="1.2" />
-      <!--Value="%([System.DateTime]::Now.ToString(yyyyMMdd-mmss))" />-->
+      Value="%(AssemblyIdentities.Version)" />
     <Exec Command="&quot;$(NugetExecutable)&quot; pack $(NuspecFile)" />
   </Target>
 </Project>

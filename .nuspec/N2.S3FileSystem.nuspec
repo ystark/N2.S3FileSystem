@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
-  <metadata>
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>N2.S3Filesystem</id>
-    <version>1.0.0</version>
+    <version>1.0.4703.27575</version>
     <authors>dcowart</authors>
     <owners>dcowart</owners>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <!--<projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>-->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Adds an S3-based IFileSystem provider to N2CMS</description>
     <releaseNotes>Initial release</releaseNotes>
