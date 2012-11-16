@@ -10,7 +10,7 @@ using N2.Engine;
 
 // ReSharper disable CheckNamespace
 namespace N2.Edit.FileSystem {
-// ReSharper restore CheckNamespace
+// ReSharper restore CheckNamespace 
 	[Service(typeof(IFileSystem))]
 	public class S3FileSystem : IFileSystem {
 		private readonly string _accessKeyId;
