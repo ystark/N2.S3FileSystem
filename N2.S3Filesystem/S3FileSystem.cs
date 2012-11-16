@@ -52,7 +52,6 @@ namespace N2.Edit.FileSystem {
 			var request = new GetObjectRequest()
 				.WithBucketName(_bucketName)
 				.WithKey(FixVirtualPath(virtualPath));
-
 			FileData file;
 			using (var response = _s3.GetObject(request)) {
 				file = new FileData {
