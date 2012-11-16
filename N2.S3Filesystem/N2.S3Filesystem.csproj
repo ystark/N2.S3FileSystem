@@ -16,6 +16,7 @@
     <RestorePackages>true</RestorePackages>
     <NugetExecutable>$(SolutionDir)\.nuget\nuget.exe</NugetExecutable>
     <NuspecFile>$(SolutionDir)\.nuspec\N2.S3FileSystem.nuspec</NuspecFile>
+    <MSBuildCommunityTasksPath>$(SolutionDir)\Build</MSBuildCommunityTasksPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,6 +66,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <Import Project="$(SolutionDir)\Build\MSBuild.Community.Tasks.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -78,6 +80,13 @@
   <Target Name="AfterBuild">
     <!-- You could use the MSBuild Copy task here to move the compiled code into
        a structure that fits your desired package format -->
+    <XmlUpdate
+      Prefix="nu"
+      Namespace="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd"
+      XmlFileName="$(NuspecFile)"
+      XPath="package/nu:metadata/nu:version"
+      Value="1.2" />
+      <!--Value="%([System.DateTime]::Now.ToString(yyyyMMdd-mmss))" />-->
     <Exec Command="&quot;$(NugetExecutable)&quot; pack $(NuspecFile)" />
   </Target>
 </Project>
