@@ -1,7 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N2.S3Filesystem", "N2.S3Filesystem\N2.S3Filesystem.csproj", "{17B2E276-0453-421C-9ECB-C86374F78E8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "N2.S3FileSystem", "N2.S3Filesystem\N2.S3FileSystem.csproj", "{17B2E276-0453-421C-9ECB-C86374F78E8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A23BCF64-D6C9-4596-8C60-F941D9698FC8}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{87AAEDE0-0525-46DD-932D-992D6DFFB7B1}"
+	ProjectSection(SolutionItems) = preProject
+		.nuspec\N2.S3FileSystem.nuspec = .nuspec\N2.S3FileSystem.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
