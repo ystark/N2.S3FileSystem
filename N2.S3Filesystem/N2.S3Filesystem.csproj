@@ -15,7 +15,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <NugetExecutable>$(SolutionDir).nuget\nuget.exe</NugetExecutable>
-    <NuspecFile>$(SolutionDir).nuspec\N2.S3FileSystem.$(Configuration).nuspec</NuspecFile>
+    <NuspecFile>$(SolutionDir).nuspec\N2.S3FileSystem.nuspec</NuspecFile>
     <MSBuildCommunityTasksPath>$(SolutionDir)Build</MSBuildCommunityTasksPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -86,7 +86,7 @@
   <!--<Target Name="Compile">
     <MSBuild Project="$(SolutionFile)" Properties="Configuration=Release" />
   </Target>-->
-  <Target Name="AfterBuild">
+  <Target Name="AfterBuild" Condition="'$(Configuration)' == 'Release' ">
     <GetAssemblyIdentity AssemblyFiles="$(OutputPath)\$(AssemblyName).dll">
       <Output TaskParameter="Assemblies" ItemName="AssemblyIdentities" />
     </GetAssemblyIdentity>
