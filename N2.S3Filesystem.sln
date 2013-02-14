@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A23BCF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{87AAEDE0-0525-46DD-932D-992D6DFFB7B1}"
 	ProjectSection(SolutionItems) = preProject
+		.nuspec\N2.S3FileSystem.Debug.nuspec = .nuspec\N2.S3FileSystem.Debug.nuspec
 		.nuspec\N2.S3FileSystem.Release.nuspec = .nuspec\N2.S3FileSystem.Release.nuspec
 		.nuspec\content\web.config.transform = .nuspec\content\web.config.transform
 	EndProjectSection
