@@ -2,7 +2,7 @@
 <package>
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>N2.S3Filesystem</id>
-    <version>1.0.4793.24022</version>
+    <version>1.0.4793.24409</version>
     <authors>dcowart</authors>
     <owners>dcowart</owners>
     <projectUrl>https://github.com/Intermark/N2.S3FileSystem</projectUrl>
@@ -21,5 +21,6 @@
   </metadata>
   <files>
     <file src="..\N2.S3FileSystem\bin\Release\N2.S3FileSystem.dll" target="lib" />
+    <file src="..\.nuspec\content\web.config.transform" target="content" />
   </files>
 </package>
