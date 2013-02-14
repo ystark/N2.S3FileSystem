@@ -2,7 +2,7 @@
 <package>
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>N2.S3Filesystem</id>
-    <version>1.0.4703.28406</version>
+    <version>1.0.4793.19559</version>
     <authors>dcowart</authors>
     <owners>dcowart</owners>
     <projectUrl>https://github.com/Intermark/N2.S3FileSystem</projectUrl>
@@ -15,5 +15,11 @@
       <dependency id="AWSSDK" version="1.5.8.0" />
       <dependency id="N2CMS.Library" version="2.4.7" />
     </dependencies>
+    <references>
+      <reference file="N2.S3FileSystem.dll" />
+    </references>
   </metadata>
+  <files>
+    <file src="..\N2.S3FileSystem\bin\Release\N2.S3FileSystem.dll" target="lib" />
+  </files>
 </package>

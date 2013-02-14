@@ -1,0 +1,25 @@
+<configuration>
+	<appSettings>
+		<add xdt:Transform="Insert" key="AWSAccessKeyID" value="[AWSAccessKeyID]" />
+		<add xdt:Transform="Insert" key="AWSSecretAccessKey" value="[AWSSecretAccessKey]" />
+		<add xdt:Transform="Insert" key="AWSBucketName" value="[BUCKET NAME]" />
+	</appSettings>
+</configuration>
+
+<system.webServer>
+    <rewrite>
+      <rules>
+        <rule name="S3 Images" stopProcessing="true" xdt:Transform="Insert">
+          <match url="upload\/.*" />
+          <action type="Redirect" url="http://s3.amazonaws.com/[BUCKET NAME]/{R:0}" />
+        </rule>
+	</rewrite>
+</system.webServer>
+
+<n2 xmlns="http://n2cms.com/schemas/configuration/v3">
+    <engine>
+      <components>
+        <add xdt:Transform="Insert" key="n2.fileSystem" service="N2.Edit.FileSystem.IFileSystem,N2" implementation="N2.Edit.FileSystem.S3FileSystem,N2.S3FileSystem" />
+      </components>
+	</engine>
+</n2>

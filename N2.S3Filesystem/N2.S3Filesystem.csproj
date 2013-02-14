@@ -15,7 +15,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <NugetExecutable>$(SolutionDir).nuget\nuget.exe</NugetExecutable>
-    <NuspecFile>$(SolutionDir).nuspec\N2.S3FileSystem.nuspec</NuspecFile>
+    <NuspecFile>$(SolutionDir).nuspec\N2.S3FileSystem.$(Configuration).nuspec</NuspecFile>
     <MSBuildCommunityTasksPath>$(SolutionDir)Build</MSBuildCommunityTasksPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
